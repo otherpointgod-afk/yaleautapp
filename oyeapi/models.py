@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 GENDER = (
-    ('Male', 'Male')
+    ('Male', 'Male'),
     ('Female', 'Female')
 )
 class Profile(models.Model):
@@ -14,7 +14,7 @@ class Profile(models.Model):
     email = models.EmailField()
     gender = models.CharField(max_length=10, choices=GENDER)
     phone = models.CharField(max_length=15)
-    photo = models.ImageField(upload_to="default", default='https://example.com/default-profile-pic.png',null = True , blank = True)
+    photo = models.ImageField(upload_to="default", default='https://randomuser.me/api/portraits/men/91.jpg',null = True , blank = True)
 
     def _str_(self):
         return self.fullname
